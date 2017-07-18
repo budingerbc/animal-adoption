@@ -1,0 +1,31 @@
+pet adoption website
+
+listing feature where we list the animals.
+list by animal
+
+quiz to line up person with animal - matchmaker
+
+list of animals:
+dogs
+cats
+birds
+reptiles
+fish
+
+object oriented for animal
+properties:
+type
+name
+color
+age
+size
+personality
+adopted
+notes
+
+//quiz narrowing down
+1. type of animal
+2. color of animal
+4. age of animal
+5. size of animal
+6. personality of animal
