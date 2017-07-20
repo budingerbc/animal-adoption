@@ -13,6 +13,49 @@ function Animal(type,name,color,age,size,personality,notes){
   this.notes = notes;
 }
 
+
+/* Possible values for Animal.type
+"dog"
+"cat"
+"bird"
+"reptile"
+"fish"
+*/
+
+/* Possible values for Animal.color
+"brown"
+"white"
+"purple"
+"black"
+"orange"
+*/
+
+/* Possible values for Animal.age
+"baby"
+"young"
+"middle"
+"adult"
+"old"
+*/
+
+/* Possible values for Animal.size
+"tiny"
+"small"
+"medium"
+"large"
+"huge"
+*/
+
+/* Possible values for Animal.age
+"sweet"
+"cold"
+"active"
+"sleepy"
+"playful"
+*/
+var fluffy = new Animal("cat","Fluffy","White","5","Large","playful","These are the notes for fluffy");
+
+
 var currentQuesiton = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
