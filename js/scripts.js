@@ -53,9 +53,10 @@ function Animal(type,name,color,age,size,personality,notes){
 "sleepy"
 "playful"
 */
-var fluffy = new Animal("cat","Fluffy","White","5","Large","playful","These are the notes for fluffy");
-
-
+var max = new Animal("Dog","Old","Golden","Sweet","Medium");
+var lacey = new Animal("Dog","Young","Brown","Playful","Small");
+var miko = new Animal("Dog","Baby","Black","Active","Tiny");
+var lola = new Animal("Dog", "Young","White","Sleepy","Medium")
 var currentQuesiton = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
