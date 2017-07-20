@@ -46,26 +46,96 @@ function Animal(type,name,color,age,size,personality,notes){
 "huge"
 */
 
-/* Possible values for Animal.age
+/* Possible values for Animal.personality
 "sweet"
 "cold"
 "active"
 "sleepy"
 "playful"
 */
-var fluffy = new Animal("cat","Fluffy","White","5","Large","playful","These are the notes for fluffy");
+var fluffy = new Animal("cat","Fluffy","white","adult","large","playful","These are the notes for fluffy");
+var rover = new Animal("dog","Rover","white","adult","large","playful","These are the notes for fluffy");
+var goldie = new Animal("fish","Goldie","white","adult","large","playful","These are the notes for fluffy");
+var scaly = new Animal("reptile","Scaly","white","adult","large","playful","These are the notes for fluffy");
+var flappy = new Animal("bird","Flappy","white","adult","large","playful","These are the notes for fluffy");
 
+var animals = [fluffy, rover, goldie, scaly, flappy];
+var animalsOriginal = [];
 
-var currentQuesiton = 1;
+for (var i = 0; i < animals.length; i++) {
+  animalsOriginal.push(animals[i]);
+}
+
+var currentQuestion = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
     $('#question' + i).hide();
   }
-  currentQuesiton++;
-  $('#question'+ currentQuesiton).show();
-  if(currentQuesiton===5){
+  currentQuestion++;
+  $('#question'+ currentQuestion).show();
+  if(currentQuestion===5){
     $('#next').text('Find my match!');
   }
+}
+
+function sortAnimal(answer) {
+
+if (currentQuestion===1){
+
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i].type != answer && answer!="random"){
+      delete(animals[i]);
+    }
+  }
+}
+if (currentQuestion===2){
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i]!=null && animals[i].color != answer && answer!="random"){
+      delete(animals[i]);
+    }
+  }
+}
+if (currentQuestion===3){
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i]!=null && animals[i].age != answer && answer!="random"){
+        delete(animals[i]);
+    }
+  }
+}
+if (currentQuestion===4){
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i]!=null && animals[i].size != answer && answer!="random"){
+      delete(animals[i]);
+    }
+  }
+}
+if (currentQuestion===5){
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i]!=null && animals[i].personality != answer && answer!="random"){
+      delete(animals[i]);
+    }
+  }
+  var hasMatch = false;
+
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i]!=null){
+      //final animals
+      hasMatch=true;
+      alert('Your match is: ' + animals[i].name);
+
+    }
+  }
+  if (hasMatch===false) {
+    //choose random animals
+    alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
+  }
+
+}
+
+
+
+
+
 }
 //end section 2
 
@@ -77,9 +147,11 @@ $(document).ready(function() {
 
   //section2- matchmaker
   $("#next").click(function() {
-    var answer = $('input:radio[name=question' + currentQuesiton +']:checked').val();
+    var answer = $('input:radio[name=question' + currentQuestion +']:checked').val();
     if (answer){
+        sortAnimal(answer);
         nextQuestion(); // display the next quesiton
+
     }else{
       alert('Please choose an answer');
     }
