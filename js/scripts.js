@@ -54,11 +54,11 @@ function Animal(type,name,color,age,size,personality,notes){
 "playful"
 */
 
-var max = new Animal("Dog","Old","Golden","Sweet","Medium");
-var lacey = new Animal("Dog","Young","Brown","Playful","Small");
-var miko = new Animal("Dog","Baby","Black","Active","Tiny");
-var lola = new Animal("Dog", "Young","White","Sleepy","Medium")
-var currentQuesiton = 1;
+var max = new Animal("Dog", "Max", "Orange","Old", "Medium", "Sweet","");
+var lacey = new Animal("Dog", "Lacey","Brown","Young", "Small","Playful", "");
+var miko = new Animal("Dog", "Miko", "Black", "Baby", "Tiny", "Active", "");
+var lola = new Animal("Dog", "Lola", "White", "Young", "Medium", "Sleepy", "")
+var currentQuestion = 1;
 
 var animals = [max, lacey, miko, lola];
 var animalsOriginal = [];
@@ -80,57 +80,66 @@ function nextQuestion(){
 
 function sortAnimal(answer) {
 
-if (currentQuestion===1){
+  if (currentQuestion===1){
 
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].type != answer && answer!="random"){
-      delete(animals[i]);
-    }
-  }
-}
-if (currentQuestion===2){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].color != answer && answer!="random"){
-      delete(animals[i]);
-    }
-  }
-}
-if (currentQuestion===3){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].age != answer && answer!="random"){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i].type.toLowerCase() !== answer && answer !== "random"){
         delete(animals[i]);
+      }
     }
   }
-}
-if (currentQuestion===4){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].size != answer && answer!="random"){
-      delete(animals[i]);
+  if (currentQuestion===2){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].color.toLowerCase() != answer && answer!="random"){
+        delete(animals[i]);
+      }
     }
   }
-}
-if (currentQuestion===5){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].personality != answer && answer!="random"){
-      delete(animals[i]);
+  if (currentQuestion===3){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].age.toLowerCase() != answer && answer!="random"){
+        delete(animals[i]);
+      }
     }
   }
-  var hasMatch = false;
+  if (currentQuestion===4){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].size.toLowerCase() != answer && answer!="random"){
+        delete(animals[i]);
+      }
+    }
+  }
+  if (currentQuestion===5){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].personality.toLowerCase() != answer && answer!="random"){
+        delete(animals[i]);
+      }
+    }
+    var hasMatch = false;
 
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null){
-      //final animals
-      hasMatch=true;
-      alert('Your match is: ' + animals[i].name);
-
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null){
+        //final animals
+        hasMatch=true;
+      }
     }
-  }
-  if (hasMatch===false) {
-    //choose random animals
-    alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
-  }
 
-}
+    if (hasMatch) {
+      var matchingAnimals = [];
+      for (var i = 0; i <= animals.length; i++) {
+        if (animals[i] != null) {
+          matchingAnimals.push(animals[i]);
+          alert("You've been matched with " + matchingAnimals[Math.floor((Math.random() * matchingAnimals.length))].name) + ".";
+        }
+      }
+    }
+
+    if (!hasMatch) {
+      //choose random animals
+      alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
+    }
+
+  }
 
 
 
