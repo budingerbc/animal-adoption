@@ -1,7 +1,11 @@
 //section 1-animal
 
 //end section 1
-
+var chica = new Animal("cat", "chica", "brown","baby", "tiny","sleepy","")
+var jezebel = new Animal("cat", "jezebel","brown","baby", "medium","playful", "")
+var candi = new Animal("cat", "candi","white","adult", "medium","active", "")
+var papa = new Animal("reptile", "papa","purple","adult", "small","active", "")
+var tiki = new Animal("bird", "tiki","orange","young", "medium","lazy", "")
 //section2- matchmaker
 function Animal(type,name,color,age,size,personality,notes){
   this.type= type;
@@ -53,10 +57,11 @@ function Animal(type,name,color,age,size,personality,notes){
 "sleepy"
 "playful"
 */
-var max = new Animal("Dog","Old","Golden","Sweet","Medium");
-var lacey = new Animal("Dog","Young","Brown","Playful","Small");
-var miko = new Animal("Dog","Baby","Black","Active","Tiny");
-var lola = new Animal("Dog", "Young","White","Sleepy","Medium")
+var max = new Animal("Dog","Old","Sweet", "Golden","Medium");
+var lacey = new Animal("Dog","Young","Playful","Brown","Small");
+var miko = new Animal("Dog","Baby","Active","Black","Tiny");
+var lola = new Animal("Dog", "Young","Sleepy", "White","Medium")
+
 var currentQuesiton = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
