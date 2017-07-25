@@ -53,20 +53,20 @@ function Animal(type,name,color,age,size,personality,notes){
 "sleepy"
 "playful"
 */
+var fluffy = new Animal("cat","Fluffy","white","adult","large","playful","These are the notes for fluffy");
+var rover = new Animal("dog","Rover","white","adult","large","playful","These are the notes for fluffy");
+var goldie = new Animal("fish","Goldie","white","adult","large","playful","These are the notes for fluffy");
+var scaly = new Animal("reptile","Scaly","white","adult","large","playful","These are the notes for fluffy");
+var flappy = new Animal("bird","Flappy","white","adult","large","playful","These are the notes for fluffy");
 
-var max = new Animal("Dog","Old","Golden","Sweet","Medium");
-var lacey = new Animal("Dog","Young","Brown","Playful","Small");
-var miko = new Animal("Dog","Baby","Black","Active","Tiny");
-var lola = new Animal("Dog", "Young","White","Sleepy","Medium")
-var currentQuesiton = 1;
-
-var animals = [max, lacey, miko, lola];
+var animals = [fluffy, rover, goldie, scaly, flappy];
 var animalsOriginal = [];
 
 for (var i = 0; i < animals.length; i++) {
   animalsOriginal.push(animals[i]);
 }
 
+var currentQuestion = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
     $('#question' + i).hide();

@@ -58,7 +58,6 @@ var max = new Animal("Dog","Old","Golden","Sweet","Medium");
 var lacey = new Animal("Dog","Young","Brown","Playful","Small");
 var miko = new Animal("Dog","Baby","Black","Active","Tiny");
 var lola = new Animal("Dog", "Young","White","Sleepy","Medium")
-var currentQuesiton = 1;
 
 var animals = [max, lacey, miko, lola];
 var animalsOriginal = [];
@@ -66,6 +65,8 @@ var animalsOriginal = [];
 for (var i = 0; i < animals.length; i++) {
   animalsOriginal.push(animals[i]);
 }
+
+var currentQuesiton = 1;
 
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
@@ -80,57 +81,57 @@ function nextQuestion(){
 
 function sortAnimal(answer) {
 
-if (currentQuestion===1){
+  if (currentQuestion===1){
 
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].type != answer && answer!="random"){
-      delete(animals[i]);
-    }
-  }
-}
-if (currentQuestion===2){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].color != answer && answer!="random"){
-      delete(animals[i]);
-    }
-  }
-}
-if (currentQuestion===3){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].age != answer && answer!="random"){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i].type != answer && answer!="random"){
         delete(animals[i]);
+      }
     }
   }
-}
-if (currentQuestion===4){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].size != answer && answer!="random"){
-      delete(animals[i]);
+  if (currentQuestion===2){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].color != answer && answer!="random"){
+        delete(animals[i]);
+      }
     }
   }
-}
-if (currentQuestion===5){
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null && animals[i].personality != answer && answer!="random"){
-      delete(animals[i]);
+  if (currentQuestion===3){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].age != answer && answer!="random"){
+        delete(animals[i]);
+      }
     }
   }
-  var hasMatch = false;
+  if (currentQuestion===4){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].size != answer && answer!="random"){
+        delete(animals[i]);
+      }
+    }
+  }
+  if (currentQuestion===5){
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null && animals[i].personality != answer && answer!="random"){
+        delete(animals[i]);
+      }
+    }
+    var hasMatch = false;
 
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i]!=null){
-      //final animals
-      hasMatch=true;
-      alert('Your match is: ' + animals[i].name);
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i]!=null){
+        //final animals
+        hasMatch=true;
+        alert('Your match is: ' + animals[i].name);
 
+      }
     }
-  }
-  if (hasMatch===false) {
-    //choose random animals
-    alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
-  }
+    if (hasMatch===false) {
+      //choose random animals
+      alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
+    }
 
-}
+  }
 
 
 
@@ -149,8 +150,8 @@ $(document).ready(function() {
   $("#next").click(function() {
     var answer = $('input:radio[name=question' + currentQuestion +']:checked').val();
     if (answer){
-        sortAnimal(answer);
-        nextQuestion(); // display the next quesiton
+      sortAnimal(answer);
+      nextQuestion(); // display the next quesiton
 
     }else{
       alert('Please choose an answer');
