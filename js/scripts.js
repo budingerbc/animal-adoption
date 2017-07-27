@@ -1,5 +1,13 @@
 //section 1-animal
-
+var max = new Animal("Dog","Old","Sweet", "Golden","Medium");
+var lacey = new Animal("Dog","Young","Playful","Brown","Small");
+var miko = new Animal("Dog","Baby","Active","Black","Tiny");
+var lola = new Animal("Dog", "Young","Sleepy", "White","Medium")
+var chica = new Animal("cat", "chica", "brown","baby", "tiny","sleepy","")
+var jezebel = new Animal("cat", "jezebel","brown","baby", "medium","playful", "")
+var candi = new Animal("cat", "candi","white","adult", "medium","active", "")
+var papa = new Animal("reptile", "papa","purple","adult", "small","active", "")
+var tiki = new Animal("bird", "tiki","orange","young", "medium","lazy", "")
 //end section 1
 
 //section2- matchmaker
@@ -54,13 +62,9 @@ function Animal(type,name,color,age,size,personality,notes){
 "playful"
 */
 
-var max = new Animal("Dog", "Max", "Orange","Old", "Medium", "Sweet","");
-var lacey = new Animal("Dog", "Lacey","Brown","Young", "Small","Playful", "");
-var miko = new Animal("Dog", "Miko", "Black", "Baby", "Tiny", "Active", "");
-var lola = new Animal("Dog", "Lola", "White", "Young", "Medium", "Sleepy", "")
 var currentQuestion = 1;
 
-var animals = [max, lacey, miko, lola];
+var animals = [max, lacey, miko, lola, chica, jezebel, candi, papa, tiki];
 var animalsOriginal = [];
 
 for (var i = 0; i < animals.length; i++) {
