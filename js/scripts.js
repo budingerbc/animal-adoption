@@ -9,7 +9,6 @@ var candi = new Animal("cat", "candi","white","adult", "medium","active", "")
 var papa = new Animal("reptile", "papa","purple","adult", "small","active", "")
 var tiki = new Animal("bird", "tiki","orange","young", "medium","lazy", "")
 //end section 1
-
 //section2- matchmaker
 function Animal(type,name,color,age,size,personality,notes){
   this.type= type;
@@ -71,6 +70,7 @@ for (var i = 0; i < animals.length; i++) {
   animalsOriginal.push(animals[i]);
 }
 
+var currentQuesiton = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
     $('#question' + i).hide();
