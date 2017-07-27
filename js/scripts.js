@@ -1,13 +1,13 @@
 //section 1-animal
-var max = new Animal("Dog","Old","Sweet", "Golden","Medium");
-var lacey = new Animal("Dog","Young","Playful","Brown","Small");
-var miko = new Animal("Dog","Baby","Active","Black","Tiny");
-var lola = new Animal("Dog", "Young","Sleepy", "White","Medium")
-var chica = new Animal("cat", "chica", "brown","baby", "tiny","sleepy","")
-var jezebel = new Animal("cat", "jezebel","brown","baby", "medium","playful", "")
-var candi = new Animal("cat", "candi","white","adult", "medium","active", "")
-var papa = new Animal("reptile", "papa","purple","adult", "small","active", "")
-var tiki = new Animal("bird", "tiki","orange","young", "medium","lazy", "")
+var max = new Animal("Dog", "Max", "Orange","Old", "Medium", "Sweet","");
+var lacey = new Animal("Dog", "Lacey","Brown","Young", "Small","Playful", "");
+var miko = new Animal("Dog", "Miko", "Black", "Baby", "Tiny", "Active", "");
+var lola = new Animal("Dog", "Lola", "White", "Young", "Medium", "Sleepy", "")
+var chica = new Animal("Cat", "chica", "brown","baby", "tiny","sleepy","")
+var jezebel = new Animal("Cat", "jezebel","brown","baby", "medium","playful", "")
+var candi = new Animal("Cat", "candi","white","adult", "medium","active", "")
+var papa = new Animal("Reptile", "papa","purple","adult", "small","active", "")
+var tiki = new Animal("Bird", "tiki","orange","young", "medium","lazy", "")
 //end section 1
 //section2- matchmaker
 function Animal(type,name,color,age,size,personality,notes){
@@ -70,7 +70,7 @@ for (var i = 0; i < animals.length; i++) {
   animalsOriginal.push(animals[i]);
 }
 
-var currentQuesiton = 1;
+var currentQuestion = 1;
 function nextQuestion(){
   for (var i = 0; i < 5; i++) {
     $('#question' + i).hide();
@@ -133,22 +133,18 @@ function sortAnimal(answer) {
       for (var i = 0; i <= animals.length; i++) {
         if (animals[i] != null) {
           matchingAnimals.push(animals[i]);
-          alert("You've been matched with " + matchingAnimals[Math.floor((Math.random() * matchingAnimals.length))].name) + ".";
         }
       }
+      var animalResult = matchingAnimals[Math.floor((Math.random() * matchingAnimals.length))].name.toLowerCase();
+      $("#animalResult").append($("<h2>You've been matched with " + animalResult + "</h2>"));
     }
 
     if (!hasMatch) {
       //choose random animals
-      alert("Your random match: " + animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name);
+      var randomResult = animalsOriginal[Math.floor((Math.random() * animalsOriginal.length))].name.toLowerCase();
+      $("#animalResult").append($("<h2>Your random match is " + randomResult + "</h2>"));
     }
-
   }
-
-
-
-
-
 }
 //end section 2
 
